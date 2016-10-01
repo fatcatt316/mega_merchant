@@ -3,8 +3,8 @@ In which Joe explores the wild world of Elixir n' Phoenix.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+- [Purpose](#purpose)
   - [Learnin' Purpose](#learnin-purpose)
   - [App's Purpose](#apps-purpose)
 - [Lessons Learnt](#lessons-learnt)
@@ -13,7 +13,6 @@ In which Joe explores the wild world of Elixir n' Phoenix.
   - [Learn more](#learn-more)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 
 ##Purpose  
 
