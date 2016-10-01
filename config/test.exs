@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :mega_merchant, MegaMerchant.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "joep",
+  password: "",
   database: "mega_merchant_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
