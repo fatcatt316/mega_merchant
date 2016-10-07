@@ -67,3 +67,5 @@ Run migrations:
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+  
+  * Elixir: http://elixir-lang.org/docs/stable/elixir/Kernel.html
