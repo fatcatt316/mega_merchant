@@ -47,6 +47,9 @@ Start server with dependencies:
 Install dependencies:  
 `mix deps.get`
 
+List Phoenix routes:  
+`mix phoenix.routes`
+
 Start Phoenix endpoint:  
 `mix phoenix.server`
 
