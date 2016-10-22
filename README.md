@@ -41,6 +41,9 @@ Install Node.js dependencies with `npm install`
 Start console with dependencies:  
 `iex -S mix`
 
+Find all Users in database:  
+`MegaMerchant.Repo.all(MegaMerchant.User)`
+
 Start server with dependencies:  
 `iex -S mix phoenix.server`
 
