@@ -14,10 +14,11 @@ defmodule MegaMerchant.RegistrationController do
 
     # case Repo.insert(changeset) do
     case MegaMerchant.Registration.create(changeset, MegaMerchant.Repo) do
-      {:ok, _user} ->
+      {:ok, user} ->
         # sign in the user
         conn
-        |> put_flash(:info, "You done registered 👍")
+        |> put_session(:current_user, user.id)
+        |> put_flash(:info, "You just registered 👍")
         |> redirect(to: "/")
       {:error, changeset} ->
         # show error
