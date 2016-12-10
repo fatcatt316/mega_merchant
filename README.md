@@ -38,6 +38,11 @@ Install Node.js dependencies with `npm install`
 ### Phoenix
 "IEX" = "Interactive Elixir"  
 
+[Migration cheatsheet](http://ricostacruz.com/cheatsheets/phoenix-migrations.html)
+
+Generate model, migration, controller, view, and templates:
+`mix phoenix.gen.html Ad ads title:string description:string price:decimal`
+
 Start console with dependencies:  
 `iex -S mix`
 
