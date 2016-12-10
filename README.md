@@ -49,17 +49,20 @@ Start console with dependencies:
 Find all Users in database:  
 `MegaMerchant.Repo.all(MegaMerchant.User)`
 
-Start server with dependencies:  
-`iex -S mix phoenix.server`
-
 Install dependencies:  
 `mix deps.get`
+
+Run them tests:  
+`mix test`
 
 List Phoenix routes:  
 `mix phoenix.routes`
 
 Start Phoenix endpoint:  
 `mix phoenix.server`
+
+Start server with dependencies:  
+`iex -S mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
