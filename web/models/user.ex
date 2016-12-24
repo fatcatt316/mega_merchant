@@ -2,6 +2,8 @@ defmodule MegaMerchant.User do
   use MegaMerchant.Web, :model
 
   schema "users" do
+    has_many :ads, MegaMerchant.Ad
+
     field :email, :string
     field :crypted_password, :string
     field :password, :string, virtual: true

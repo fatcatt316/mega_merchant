@@ -1,0 +1,30 @@
+<h2>Listing ads</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for ad <- @ads do %>
+    <tr>
+      <td><%= ad.title %></td>
+      <td><%= ad.description %></td>
+      <td><%= ad.price %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: ad_path(@conn, :show, ad), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: ad_path(@conn, :edit, ad), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: ad_path(@conn, :delete, ad), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New ad", to: ad_path(@conn, :new) %>

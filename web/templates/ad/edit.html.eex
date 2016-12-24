@@ -1,0 +1,6 @@
+<h2>Edit ad</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: ad_path(@conn, :update, @ad) %>
+
+<%= link "Back", to: ad_path(@conn, :index) %>

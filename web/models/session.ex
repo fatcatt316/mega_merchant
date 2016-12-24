@@ -3,7 +3,7 @@ defmodule MegaMerchant.Session do
 
   def login(params, repo) do
     user = repo.get_by(User, email: String.downcase(params["email"]))
-    case authenticate(user, params["password"]) do
+    case authenticate_by_password(user, params["password"]) do
       true -> {:ok, user}
       _    -> :error
     end
@@ -16,7 +16,7 @@ defmodule MegaMerchant.Session do
 
   def logged_in?(conn), do: !!current_user(conn)
 
-  defp authenticate(user, password) do
+  defp authenticate_by_password(user, password) do
     case user do
       nil -> false
       _   -> Comeonin.Bcrypt.checkpw(password, user.crypted_password)
