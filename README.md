@@ -40,6 +40,8 @@ Install Node.js dependencies with `npm install`
 
 [Migration cheatsheet](http://ricostacruz.com/cheatsheets/phoenix-migrations.html)
 
+[Ecto cheatsheet](http://ricostacruz.com/cheatsheets/phoenix-ecto.html)
+
 Generate model, migration, controller, view, and templates:
 `mix phoenix.gen.html Ad ads title:string description:string price:decimal`
 
