@@ -2,7 +2,6 @@ require IEx
 defmodule MegaMerchant.AdController do
   use MegaMerchant.Web, :controller
 
-  # plug :authenticate when action in [:new, :create, :update, :delete]
   plug MegaMerchant.Plug.Authenticate when action in [:new, :create, :edit, :update, :delete]
 
   alias MegaMerchant.Ad
@@ -40,13 +39,13 @@ defmodule MegaMerchant.AdController do
   end
 
   def edit(conn, %{"id" => id}) do
-    ad = Repo.get!(Ad, id)
+    ad = load_authorized_ad(conn, id) # TODO: Plug (before_action)
     changeset = Ad.changeset(ad)
     render(conn, "edit.html", ad: ad, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "ad" => ad_params}) do
-    ad = Repo.get!(Ad, id)
+    ad = load_authorized_ad(conn, id) # TODO: Plug (before_action)
 
     # TODO: Strong params - don't allow ID to change, or user_id
     # Set :user_id to current user's ID
@@ -64,7 +63,7 @@ defmodule MegaMerchant.AdController do
   end
 
   def delete(conn, %{"id" => id}) do
-    ad = Repo.get!(Ad, id)
+    ad = load_authorized_ad(conn, id) # TODO: Plug (before_action)
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
@@ -73,5 +72,19 @@ defmodule MegaMerchant.AdController do
     conn
     |> put_flash(:info, "Ad deleted successfully.")
     |> redirect(to: ad_path(conn, :index))
+  end
+
+  # TODO: Better way to scope query off current user?
+  defp load_authorized_ad(conn, id) do
+    # TODO: Allow admin user to load any Ad
+    ad = Repo.get_by(Ad, id: id, user_id: get_session(conn, :current_user))
+
+    if ad do
+      ad
+    else
+      conn
+      |> put_flash(:info, "Whoops, can't find that ad.")
+      |> redirect(to: ad_path(conn, :index))
+    end
   end
 end
