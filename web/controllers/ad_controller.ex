@@ -7,7 +7,7 @@ defmodule MegaMerchant.AdController do
   alias MegaMerchant.Ad
 
   def index(conn, _params) do
-    ads = Repo.all(Ad)
+    ads = Repo.all(Ad) # TODO: Paginate
     render(conn, "index.html", ads: ads)
   end
 
