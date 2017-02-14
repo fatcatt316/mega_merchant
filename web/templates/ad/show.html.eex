@@ -3,6 +3,11 @@
 <ul>
 
   <li>
+    <strong>Photograph:</strong>
+    <img src="<%= MegaMerchant.ImageUploader.url({@ad.photo, @ad}) %>" />
+  </li>
+
+  <li>
     <strong>Title:</strong>
     <%= @ad.title %>
   </li>

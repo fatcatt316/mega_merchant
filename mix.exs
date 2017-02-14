@@ -19,7 +19,7 @@ defmodule MegaMerchant.Mixfile do
   def application do
     [mod: {MegaMerchant, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :arc_ecto]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,10 @@ defmodule MegaMerchant.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:comeonin, "~> 2.5.3"}, # hashing
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:arc, "~> 0.6.0"}, # like CarrierWave in Rails
+     {:arc_ecto, "~> 0.5.0"} # versioned URLs
+   ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
