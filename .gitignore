@@ -25,3 +25,5 @@ erl_crash.dump
 
 # Image uploads
 /uploads
+
+.DS_Store
