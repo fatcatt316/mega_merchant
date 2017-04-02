@@ -1,4 +1,4 @@
-#MegaMerchant
+# MegaMerchant
 In which Joe explores the wild world of Elixir n' Phoenix.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -14,7 +14,7 @@ In which Joe explores the wild world of Elixir n' Phoenix.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-##Purpose  
+## Purpose
 
 ### Learnin' Purpose
 I'ma learn me some Elixir n' Phoenix. I'm gonna dedicate the month of October to getting better at Elixir, and to getting a working Elixir app deployed.
